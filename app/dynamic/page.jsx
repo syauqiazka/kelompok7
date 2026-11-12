@@ -5,7 +5,7 @@
 // TODO 1: Tambahkan konfigurasi force-dynamic di baris bawah ini.
 // Tulis: export const dynamic = "force-dynamic";
 // agar Next.js selalu merender ulang halaman ini di server pada setiap request.
-
+export const dynamic = "force-dynamic";
 
 export default function DynamicPage() {
   // Variabel waktu server real-time
@@ -20,8 +20,7 @@ export default function DynamicPage() {
       <p>
         Waktu server saat ini:{" "}
         <b style={{ color: "#34d399", fontSize: "18px" }}>
-          {/* Tuliskan {waktuServer} di sini */}
-          ... WIB
+          {waktuServer} WIB
         </b>
       </p>
 

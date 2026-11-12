@@ -230,33 +230,23 @@ Jawablah dengan singkat dan jelas berdasarkan hasil pengamatanmu:
 
 1. **Apa perbedaan utama antara halaman Dynamic (SSR) dan halaman Statis (SSG) saat kamu menekan tombol refresh (F5)?**
    * *Jawaban:*
-     \
-     .................................................................................................................................................\
-     .................................................................................................................................................
+     Pada halaman Dynamic (SSR), setiap kali tombol refresh (F5) ditekan, Next.js akan merender ulang halaman di server secara real-time sehingga detik waktu dan data selalu diperbarui. Sedangkan pada halaman Statis (SSG), halaman hanya dibuat satu kali saat proses build dan disajikan langsung sebagai file HTML statis, sehingga detik waktu dan kontennya tidak berubah meskipun di-refresh berulang kali.
 
 2. **Apa fungsi dari baris kode `export const revalidate = 10;` pada halaman ISR?**
    * *Jawaban:*
-     \
-     .................................................................................................................................................\
-     .................................................................................................................................................
+     Berfungsi untuk menentukan durasi cache halaman selama 10 detik (Incremental Static Regeneration). Selama rentang 10 detik, request akan menyajikan halaman statis dari cache. Setelah 10 detik terlewati dan ada request baru, Next.js akan meregenerasi halaman di latar belakang (background) untuk memperbarui data cache.
 
 3. **Mengapa angka pada tombol Counter di halaman `/interactive` bisa langsung berubah tanpa membuat seluruh halaman web reload?**
    * *Jawaban:*
-     \
-     .................................................................................................................................................\
-     .................................................................................................................................................
+     Karena komponen `Counter` adalah Client Component yang dieksekusi langsung di browser menggunakan hook `useState`. Saat tombol diklik, state lokal berubah dan React hanya me-render ulang bagian elemen counter tersebut di Virtual DOM tanpa memuat ulang (reload) seluruh halaman web.
 
 4. **Kapan sebuah website membutuhkan halaman Dinamis (Dynamic / SSR) dibandingkan halaman Statis? Berikan 1 contoh kasusnya!**
    * *Jawaban:*
-     \
-     .................................................................................................................................................\
-     .................................................................................................................................................
+     Website membutuhkan Dynamic Rendering (SSR) ketika data/konten harus selalu real-time setiap saat atau kontennya dipersonalisasi berdasarkan data pengguna (seperti cookies, session login, atau parameter pencarian). Contoh kasusnya: Halaman Dashboard Profil Pengguna, Halaman Keranjang Belanja (Shopping Cart), atau Halaman Saldo Bank.
 
 5. **Mengapa kita wajib menuliskan direktif `"use client";` di baris paling atas jika sebuah komponen menggunakan hook `useState`?**
    * *Jawaban:*
-     \
-     .................................................................................................................................................\
-     .................................................................................................................................................
+     Karena secara default di App Router Next.js, seluruh komponen dianggap sebagai Server Component yang berjalan di server tanpa akses ke browser APIs atau React Hooks interaktif. Direktif `"use client";` berfungsi sebagai penanda boundary bahwa komponen tersebut harus dibundel dan dijalankan di sisi browser (client-side) sehingga `useState` dapat bekerja.
 
 ---
 
@@ -264,11 +254,11 @@ Jawablah dengan singkat dan jelas berdasarkan hasil pengamatanmu:
 
 Lengkapi 3 kalimat refleksi di bawah ini:
 
-1. *Setelah melakukan praktik ini, saya memahami bahwa ...................................................................................................................................................................................................................................................................................................................................................................................*
+1. *Setelah melakukan praktik ini, saya memahami bahwa Next.js menyediakan berbagai strategi rendering yang fleksibel (SSG, SSR, ISR, dan Client Component / CSR) yang dapat disesuaikan dengan kebutuhan performa aplikasi, frekuensi update data, dan interaktivitas pengguna.*
 
-2. *Strategi rendering yang paling cocok untuk halaman yang datanya sering berubah adalah ................................................... karena ...................................................................................................................................................................................................................................................................................*
+2. *Strategi rendering yang paling cocok untuk halaman yang datanya sering berubah adalah Dynamic Rendering (SSR) karena server akan selalu merender ulang dan mengambil data paling mutakhir pada setiap request dari pengguna.*
 
-3. *Hal yang paling saya pahami dari praktik ini adalah ...................................................................................................................................................................................................................................................................................................................................................................................*
+3. *Hal yang paling saya pahami dari praktik ini adalah cara kerja perbedaan waktu render antara SSG, SSR, dan ISR saat di-refresh, konfigurasi `dynamic = "force-dynamic"` dan `revalidate`, serta fungsi `"use client"` dalam pembuatan komponen interaktif.*
 
 ---
 *Jobsheet disusun oleh Kelompok 7 — Praktikum Next.js Rendering Strategy*

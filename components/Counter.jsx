@@ -18,13 +18,13 @@ export default function Counter() {
   // TODO 1: Lengkapi fungsi handleKurang agar nilai angka berkurang 1
   const handleKurang = () => {
     // Tulis kodenya di bawah ini:
-
+    setAngka(angka - 1);
   };
 
   // TODO 2: Lengkapi fungsi handleReset agar nilai angka kembali menjadi 0
   const handleReset = () => {
     // Tulis kodenya di bawah ini:
-
+    setAngka(0);
   };
 
   return (
